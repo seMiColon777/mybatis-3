@@ -30,18 +30,51 @@ public class PoolState {
   // PooledDataSource#getPoolState().
   // A possible fix is to create and return a 'snapshot'.
   private final ReentrantLock lock = new ReentrantLock();
-
+  /**
+   * 所属的 PooledDataSource 对象
+   */
   protected PooledDataSource dataSource;
-
+  /**
+   * 空闲的 PooledConnection 集合
+   */
   protected final List<PooledConnection> idleConnections = new ArrayList<>();
+  /**
+   * 激活的的 PooledConnection 集合
+   */
   protected final List<PooledConnection> activeConnections = new ArrayList<>();
+  /**
+   * 全局统计 - 获取连接的次数
+   */
   protected long requestCount;
+  /**
+   * 全局统计 - 获取连接的时间
+   */
   protected long accumulatedRequestTime;
+  /**
+   * 全局统计 - 获取到连接非超时 + 超时的占用时长
+   * <p>
+   * 所以，包括 {@link #accumulatedCheckoutTimeOfOverdueConnections} 部分
+   */
   protected long accumulatedCheckoutTime;
+  /**
+   * 全局统计 - 获取到连接超时的次数
+   */
   protected long claimedOverdueConnectionCount;
+  /**
+   * 全局统计 - 获取到连接超时的占用时长
+   */
   protected long accumulatedCheckoutTimeOfOverdueConnections;
+  /**
+   * 全局统计 - 等待连接的时间
+   */
   protected long accumulatedWaitTime;
+  /**
+   * 全局统计 - 等待连接的次数
+   */
   protected long hadToWaitCount;
+  /**
+   * 全局统计 - 获取到坏的连接的次数
+   */
   protected long badConnectionCount;
 
   public PoolState(PooledDataSource dataSource) {
