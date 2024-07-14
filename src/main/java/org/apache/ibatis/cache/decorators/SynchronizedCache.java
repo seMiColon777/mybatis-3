@@ -25,6 +25,9 @@ import org.apache.ibatis.cache.Cache;
 public class SynchronizedCache implements Cache {
 
   private final ReentrantLock lock = new ReentrantLock();
+  /**
+   * 装饰的 Cache 对象
+   */
   private final Cache delegate;
 
   public SynchronizedCache(Cache delegate) {
