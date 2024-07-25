@@ -31,11 +31,14 @@ import java.util.Properties;
  * @author Clinton Begin
  */
 public class Resources {
-
+  /**
+   * ClassLoaderWrapper 对象
+   */
   private static final ClassLoaderWrapper classLoaderWrapper = new ClassLoaderWrapper();
 
   /**
    * Charset to use when calling getResourceAsReader. null means use the system default.
+   * 字符集
    */
   private static Charset charset;
 
@@ -263,6 +266,7 @@ public class Resources {
    */
   public static InputStream getUrlAsStream(String urlString) throws IOException {
     URL url = new URL(urlString);
+    // 打开 URLConnection
     URLConnection conn = url.openConnection();
     return conn.getInputStream();
   }
