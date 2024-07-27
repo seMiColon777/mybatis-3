@@ -23,6 +23,7 @@ import java.lang.annotation.Target;
 
 /**
  * The annotation that reference a cache.
+ * 指向指定命名空间的注解
  * <p>
  * If you use this annotation, should be specified either {@link #value()} or {@link #name()} attribute.
  * <p>

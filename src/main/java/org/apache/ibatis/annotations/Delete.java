@@ -24,6 +24,7 @@ import java.lang.annotation.Target;
 
 /**
  * The annotation that specify an SQL for deleting record(s).
+ * 删除语句注解
  * <p>
  * <b>How to use:</b>
  *

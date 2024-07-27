@@ -24,6 +24,7 @@ import java.lang.annotation.Target;
 
 /**
  * The annotation that specify a method that provide an SQL for updating record(s).
+ * 更新语句提供器
  * <p>
  * <b>How to use:</b>
  *

@@ -23,6 +23,7 @@ import java.lang.annotation.Target;
 
 /**
  * The annotation that specify the parameter name.
+ * 方法参数名的注解
  * <p>
  * <b>How to use:</b>
  *

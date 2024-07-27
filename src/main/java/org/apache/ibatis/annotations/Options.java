@@ -27,6 +27,7 @@ import org.apache.ibatis.mapping.StatementType;
 
 /**
  * The annotation that specify options for customizing default behaviors.
+ * 操作可选项
  * <p>
  * <b>How to use:</b>
  *
@@ -59,6 +60,7 @@ public @interface Options {
 
   /**
    * Returns whether use the 2nd cache feature if assigned the cache.
+   * 是否使用缓存
    *
    * @return {@code true} if use; {@code false} if otherwise
    */
@@ -66,6 +68,7 @@ public @interface Options {
 
   /**
    * Returns the 2nd cache flush strategy.
+   * 刷新缓存的策略
    *
    * @return the 2nd cache flush strategy
    */
@@ -73,6 +76,7 @@ public @interface Options {
 
   /**
    * Returns the result set type.
+   * 结果类型
    *
    * @return the result set type
    */
@@ -80,6 +84,7 @@ public @interface Options {
 
   /**
    * Return the statement type.
+   * 语句类型
    *
    * @return the statement type
    */
@@ -87,6 +92,7 @@ public @interface Options {
 
   /**
    * Returns the fetch size.
+   * 加载数量
    *
    * @return the fetch size
    */
@@ -94,6 +100,7 @@ public @interface Options {
 
   /**
    * Returns the statement timeout.
+   * 超时时间
    *
    * @return the statement timeout
    */
@@ -101,6 +108,7 @@ public @interface Options {
 
   /**
    * Returns whether use the generated keys feature supported by JDBC 3.0
+   * 是否生成主键
    *
    * @return {@code true} if use; {@code false} if otherwise
    */
@@ -108,6 +116,7 @@ public @interface Options {
 
   /**
    * Returns property names that holds a key value.
+   * 主键在 Java 类中的属性
    * <p>
    * If you specify multiple property, please separate using comma(',').
    * </p>
@@ -118,6 +127,7 @@ public @interface Options {
 
   /**
    * Returns column names that retrieves a key value.
+   * 主键在数据库中的字段
    * <p>
    * If you specify multiple column, please separate using comma(',').
    * </p>
@@ -128,6 +138,7 @@ public @interface Options {
 
   /**
    * Returns result set names.
+   * 结果集
    * <p>
    * If you specify multiple result set, please separate using comma(',').
    * </p>

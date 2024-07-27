@@ -23,6 +23,7 @@ import java.lang.annotation.Target;
 
 /**
  * The annotation that be grouping mapping definitions for property.
+ * 结果的注解
  * <p>
  * <b>How to use:</b>
  *

@@ -26,6 +26,7 @@ import org.apache.ibatis.mapping.StatementType;
 
 /**
  * The annotation that specify an SQL for retrieving a key value.
+ * 通过 SQL 语句获得主键的注解
  * <p>
  * <b>How to use:</b>
  *

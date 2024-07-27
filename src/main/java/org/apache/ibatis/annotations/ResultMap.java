@@ -23,6 +23,7 @@ import java.lang.annotation.Target;
 
 /**
  * The annotation that specify result map names to use.
+ * 使用的结果集的注解
  * <p>
  * <b>How to use:</b><br>
  * Mapper interface:

@@ -24,6 +24,7 @@ import java.lang.annotation.Target;
 
 /**
  * The annotation that specify a method that provide an SQL for retrieving record(s).
+ * 查询语句提供器
  * <p>
  * <b>How to use:</b>
  *
