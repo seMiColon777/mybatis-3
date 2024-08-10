@@ -101,7 +101,9 @@ import org.apache.ibatis.type.TypeHandlerRegistry;
  * @author Clinton Begin
  */
 public class Configuration {
-
+  /**
+   * DB Environment 对象
+   */
   protected Environment environment;
 
   protected boolean safeRowBoundsEnabled;
@@ -135,13 +137,24 @@ public class Configuration {
   protected AutoMappingUnknownColumnBehavior autoMappingUnknownColumnBehavior = AutoMappingUnknownColumnBehavior.NONE;
 
   protected Properties variables = new Properties();
+  /**
+   * ReflectorFactory 对象
+   */
   protected ReflectorFactory reflectorFactory = new DefaultReflectorFactory();
+  /**
+   * ObjectFactory 对象
+   */
   protected ObjectFactory objectFactory = new DefaultObjectFactory();
+  /**
+   * ObjectWrapperFactory 对象
+   */
   protected ObjectWrapperFactory objectWrapperFactory = new DefaultObjectWrapperFactory();
 
   protected boolean lazyLoadingEnabled;
   protected ProxyFactory proxyFactory = new JavassistProxyFactory(); // #224 Using internal Javassist instead of OGNL
-
+  /**
+   * 数据库标识
+   */
   protected String databaseId;
   /**
    * Configuration factory class. Used to create Configuration for loading deserialized unread properties.
@@ -149,8 +162,13 @@ public class Configuration {
    * @see <a href='https://github.com/mybatis/old-google-code-issues/issues/300'>Issue 300 (google code)</a>
    */
   protected Class<?> configurationFactory;
-
+  /**
+   * MapperRegistry 对象
+   */
   protected final MapperRegistry mapperRegistry = new MapperRegistry(this);
+  /**
+   * 拦截器链
+   */
   protected final InterceptorChain interceptorChain = new InterceptorChain();
   protected final TypeHandlerRegistry typeHandlerRegistry = new TypeHandlerRegistry(this);
   protected final TypeAliasRegistry typeAliasRegistry = new TypeAliasRegistry();
@@ -247,7 +265,9 @@ public class Configuration {
 
   public void setVfsImpl(Class<? extends VFS> vfsImpl) {
     if (vfsImpl != null) {
+      // 设置 vfsImpl 属性
       this.vfsImpl = vfsImpl;
+      // 添加到 VFS 中的自定义 VFS 类的集合
       VFS.addImplClass(this.vfsImpl);
     }
   }
@@ -929,6 +949,7 @@ public class Configuration {
   }
 
   public void addMappers(String packageName) {
+    // 扫描该包下所有的 Mapper 接口，并添加到 mapperRegistry 中
     mapperRegistry.addMappers(packageName);
   }
 
