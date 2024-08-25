@@ -221,6 +221,9 @@ public class Configuration {
    * ResultMapResolver 集合
    */
   protected final Collection<ResultMapResolver> incompleteResultMaps = new LinkedList<>();
+  /**
+   * 未完成的 MethodResolver 集合
+   */
   protected final Collection<MethodResolver> incompleteMethods = new LinkedList<>();
 
   private final ReentrantLock incompleteResultMapsLock = new ReentrantLock();
@@ -1036,6 +1039,7 @@ public class Configuration {
       return;
     }
     incompleteMethodsLock.lock();
+    // 获得 MethodResolver 集合，并遍历进行处理
     try {
       incompleteMethods.removeIf(x -> {
         x.resolve();
