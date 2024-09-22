@@ -21,18 +21,25 @@ import java.util.Map;
 import org.apache.ibatis.util.MapUtil;
 
 /**
+ * LanguageDriver 注册表
+ *
  * @author Frank D. Martinez [mnesarco]
  */
 public class LanguageDriverRegistry {
-
+  /**
+   * LanguageDriver 映射
+   */
   private final Map<Class<? extends LanguageDriver>, LanguageDriver> LANGUAGE_DRIVER_MAP = new HashMap<>();
-
+  /**
+   * 默认的 LanguageDriver 类
+   */
   private Class<? extends LanguageDriver> defaultDriverClass;
 
   public void register(Class<? extends LanguageDriver> cls) {
     if (cls == null) {
       throw new IllegalArgumentException("null is not a valid Language Driver");
     }
+    // 创建 cls 对应的对象，并添加到 LANGUAGE_DRIVER_MAP 中
     MapUtil.computeIfAbsent(LANGUAGE_DRIVER_MAP, cls, k -> {
       try {
         return k.getDeclaredConstructor().newInstance();
@@ -46,6 +53,7 @@ public class LanguageDriverRegistry {
     if (instance == null) {
       throw new IllegalArgumentException("null is not a valid Language Driver");
     }
+    // 添加到 LANGUAGE_DRIVER_MAP 中
     Class<? extends LanguageDriver> cls = instance.getClass();
     if (!LANGUAGE_DRIVER_MAP.containsKey(cls)) {
       LANGUAGE_DRIVER_MAP.put(cls, instance);
@@ -64,8 +72,15 @@ public class LanguageDriverRegistry {
     return defaultDriverClass;
   }
 
+  /**
+   * 设置 {@link #defaultDriverClass}
+   *
+   * @param defaultDriverClass 默认的 LanguageDriver 类
+   */
   public void setDefaultDriverClass(Class<? extends LanguageDriver> defaultDriverClass) {
+    // 注册到 LANGUAGE_DRIVER_MAP 中
     register(defaultDriverClass);
+    // 设置 defaultDriverClass 属性
     this.defaultDriverClass = defaultDriverClass;
   }
 
