@@ -125,6 +125,9 @@ public class Configuration {
   protected Class<? extends Log> logImpl;
   protected Class<? extends VFS> vfsImpl;
   protected Class<?> defaultSqlProviderType;
+  /**
+   * {@link BaseExecutor} 本地缓存范围
+   */
   protected LocalCacheScope localCacheScope = LocalCacheScope.SESSION;
   protected JdbcType jdbcTypeForNull = JdbcType.OTHER;
   protected Set<String> lazyLoadTriggerMethods = new HashSet<>(
@@ -784,9 +787,17 @@ public class Configuration {
   public Executor newExecutor(Transaction transaction) {
     return newExecutor(transaction, defaultExecutorType);
   }
-
+  /**
+   * 创建 Executor 对象
+   *
+   * @param transaction 事务对象
+   * @param executorType 执行器类型
+   * @return Executor 对象
+   */
   public Executor newExecutor(Transaction transaction, ExecutorType executorType) {
+    // <1> 获得执行器类型
     executorType = executorType == null ? defaultExecutorType : executorType;
+    // <2> 创建对应实现的 Executor 对象
     Executor executor;
     if (ExecutorType.BATCH == executorType) {
       executor = new BatchExecutor(this, transaction);
@@ -795,9 +806,11 @@ public class Configuration {
     } else {
       executor = new SimpleExecutor(this, transaction);
     }
+    // <3> 如果开启缓存，创建 CachingExecutor 对象，进行包装
     if (cacheEnabled) {
       executor = new CachingExecutor(executor);
     }
+    // <4> 应用插件
     return (Executor) interceptorChain.pluginAll(executor);
   }
 

@@ -41,6 +41,9 @@ public final class MappedStatement {
   private StatementType statementType;
   private ResultSetType resultSetType;
   private SqlSource sqlSource;
+  /**
+   * Cache 对象
+   */
   private Cache cache;
   private ParameterMap parameterMap;
   private List<ResultMap> resultMaps;

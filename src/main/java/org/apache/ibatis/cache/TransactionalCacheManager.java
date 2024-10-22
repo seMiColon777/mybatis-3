@@ -22,10 +22,14 @@ import org.apache.ibatis.cache.decorators.TransactionalCache;
 import org.apache.ibatis.util.MapUtil;
 
 /**
+ * TransactionalCache 管理器
+ *
  * @author Clinton Begin
  */
 public class TransactionalCacheManager {
-
+  /**
+   * Cache 和 TransactionalCache 的映射
+   */
   private final Map<Cache, TransactionalCache> transactionalCaches = new HashMap<>();
 
   public void clear(Cache cache) {
@@ -33,10 +37,14 @@ public class TransactionalCacheManager {
   }
 
   public Object getObject(Cache cache, CacheKey key) {
+    // 首先，获得 Cache 对应的 TransactionalCache 对象
+    // 然后从 TransactionalCache 对象中，获得 key 对应的值
     return getTransactionalCache(cache).getObject(key);
   }
 
   public void putObject(Cache cache, CacheKey key, Object value) {
+    // 首先，获得 Cache 对应的 TransactionalCache 对象
+    // 然后，添加 KV 到 TransactionalCache 对象中
     getTransactionalCache(cache).putObject(key, value);
   }
 
