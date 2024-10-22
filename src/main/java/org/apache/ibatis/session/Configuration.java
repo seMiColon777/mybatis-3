@@ -779,8 +779,10 @@ public class Configuration {
 
   public StatementHandler newStatementHandler(Executor executor, MappedStatement mappedStatement,
       Object parameterObject, RowBounds rowBounds, ResultHandler resultHandler, BoundSql boundSql) {
+    // 创建 ParameterHandler 对象
     StatementHandler statementHandler = new RoutingStatementHandler(executor, mappedStatement, parameterObject,
         rowBounds, resultHandler, boundSql);
+    // 应用插件
     return (StatementHandler) interceptorChain.pluginAll(statementHandler);
   }
 
