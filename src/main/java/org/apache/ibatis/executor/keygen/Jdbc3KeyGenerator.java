@@ -53,6 +53,7 @@ public class Jdbc3KeyGenerator implements KeyGenerator {
 
   /**
    * A shared instance.
+   * 共享的单例
    *
    * @since 3.4.3
    */
@@ -72,16 +73,19 @@ public class Jdbc3KeyGenerator implements KeyGenerator {
   }
 
   public void processBatch(MappedStatement ms, Statement stmt, Object parameter) {
+    // <1> 获得主键属性的配置。如果为空，则直接返回，说明不需要主键
     final String[] keyProperties = ms.getKeyProperties();
     if (keyProperties == null || keyProperties.length == 0) {
       return;
     }
+    // <2> 获得返回的自增主键
     try (ResultSet rs = stmt.getGeneratedKeys()) {
       final ResultSetMetaData rsmd = rs.getMetaData();
       final Configuration configuration = ms.getConfiguration();
       if (rsmd.getColumnCount() < keyProperties.length) {
         // Error?
       } else {
+        // <3> 设置主键们，到参数 parameter 中
         assignKeys(configuration, rs, rsmd, keyProperties, parameter);
       }
     } catch (Exception e) {
