@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -49,9 +49,7 @@ public class DefaultCursor<T> implements Cursor<T> {
    */
   private final CursorIterator cursorIterator = new CursorIterator();
   /**
-   * 是否开始迭代
-   *
-   * {@link #iterator()}
+   * 是否开始迭代 {@link #iterator()}
    */
   private boolean iteratorRetrieved;
   /**
@@ -213,14 +211,12 @@ public class DefaultCursor<T> implements Cursor<T> {
   protected class CursorIterator implements Iterator<T> {
 
     /**
-     * Holder for the next object to be returned.
-     * 结果对象，提供给 {@link #next()} 返回
+     * Holder for the next object to be returned. 结果对象，提供给 {@link #next()} 返回
      */
     T object;
 
     /**
-     * Index of objects returned using next(), and as such, visible to users.
-     * 索引位置
+     * Index of objects returned using next(), and as such, visible to users. 索引位置
      */
     int iteratorIndex = -1;
 

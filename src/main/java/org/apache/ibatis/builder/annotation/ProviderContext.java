@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -18,8 +18,7 @@ package org.apache.ibatis.builder.annotation;
 import java.lang.reflect.Method;
 
 /**
- * The context object for sql provider method.
- * ProviderSqlSource 的上下文
+ * The context object for sql provider method. ProviderSqlSource 的上下文
  *
  * @author Kazuki Shimizu
  *

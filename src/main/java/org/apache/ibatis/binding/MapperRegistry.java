@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -39,9 +39,7 @@ public class MapperRegistry {
    */
   private final Configuration config;
   /**
-   * MapperProxyFactory 的映射
-   *
-   * KEY：Mapper 接口
+   * MapperProxyFactory 的映射 KEY：Mapper 接口
    */
   private final Map<Class<?>, MapperProxyFactory<?>> knownMappers = new ConcurrentHashMap<>();
 
@@ -73,6 +71,7 @@ public class MapperRegistry {
    *
    * @param type
    *          Mapper 接口
+   *
    * @return 是否包含
    */
   public <T> boolean hasMapper(Class<T> type) {
@@ -140,8 +139,7 @@ public class MapperRegistry {
   }
 
   /**
-   * Adds the mappers.
-   * 扫描指定包，并将符合的类，添加到 knownMappers 中
+   * Adds the mappers. 扫描指定包，并将符合的类，添加到 knownMappers 中
    *
    * @param packageName
    *          the package name

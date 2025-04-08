@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -33,15 +33,11 @@ public class BatchResult {
    */
   private final String sql;
   /**
-   * 参数对象集合
-   *
-   * 每一个元素，对应一次操作的参数
+   * 参数对象集合 每一个元素，对应一次操作的参数
    */
   private final List<Object> parameterObjects;
   /**
-   * 更新数量集合
-   *
-   * 每一个元素，对应一次操作的更新数量
+   * 更新数量集合 每一个元素，对应一次操作的更新数量
    */
   private int[] updateCounts;
 

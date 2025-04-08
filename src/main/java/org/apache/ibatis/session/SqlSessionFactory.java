@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2022 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -18,8 +18,7 @@ package org.apache.ibatis.session;
 import java.sql.Connection;
 
 /**
- * Creates an {@link SqlSession} out of a connection or a DataSource
- * SqlSession 工厂接口
+ * Creates an {@link SqlSession} out of a connection or a DataSource SqlSession 工厂接口
  *
  * @author Clinton Begin
  */

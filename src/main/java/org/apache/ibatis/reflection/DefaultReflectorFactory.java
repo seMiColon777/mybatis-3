@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -31,8 +31,7 @@ public class DefaultReflectorFactory implements ReflectorFactory {
   /**
    * Reflector 的缓存映射
    * <p>
-   * KEY：类
-   * VALUE：Reflector 对象
+   * KEY：类 VALUE：Reflector 对象
    */
   private final ConcurrentMap<Class<?>, Reflector> reflectorMap = new ConcurrentHashMap<>();
 

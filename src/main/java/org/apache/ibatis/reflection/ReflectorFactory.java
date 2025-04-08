@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -23,16 +23,21 @@ public interface ReflectorFactory {
    * @return 是否缓存 Reflector 对象
    */
   boolean isClassCacheEnabled();
+
   /**
    * 设置是否缓存 Reflector 对象
    *
-   * @param classCacheEnabled 是否缓存
+   * @param classCacheEnabled
+   *          是否缓存
    */
   void setClassCacheEnabled(boolean classCacheEnabled);
+
   /**
    * 获取 Reflector 对象
    *
-   * @param type 指定类
+   * @param type
+   *          指定类
+   *
    * @return Reflector 对象
    */
   Reflector findForClass(Class<?> type);

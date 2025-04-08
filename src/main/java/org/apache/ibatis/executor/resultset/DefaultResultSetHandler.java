@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2024 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -1040,7 +1040,7 @@ public class DefaultResultSetHandler implements ResultSetHandler {
           nestedBoundSql);
       final Class<?> targetType = propertyMapping.getJavaType();
       // <1> 检查缓存中已存在
-      if (executor.isCached(nestedQuery, key)) { //  有缓存
+      if (executor.isCached(nestedQuery, key)) { // 有缓存
         // <2.1> 创建 DeferredLoad 对象，并通过该 DeferredLoad 对象从缓存中加载结采对象
         executor.deferLoad(nestedQuery, metaResultObject, property, key, targetType);
         // <2.2> 返回已定义
@@ -1064,6 +1064,7 @@ public class DefaultResultSetHandler implements ResultSetHandler {
     }
     return value;
   }
+
   // 获得内嵌查询的参数类型
   private Object prepareParameterForNestedQuery(ResultSet rs, ResultMapping resultMapping, Class<?> parameterType,
       String columnPrefix) throws SQLException {
@@ -1159,12 +1160,17 @@ public class DefaultResultSetHandler implements ResultSetHandler {
     }
     return resultMap;
   }
+
   /**
    * 获得 ResultSet 的指定字段的值
    *
-   * @param rs ResultSet 对象
-   * @param discriminator Discriminator 对象
-   * @param columnPrefix 字段名的前缀
+   * @param rs
+   *          ResultSet 对象
+   * @param discriminator
+   *          Discriminator 对象
+   * @param columnPrefix
+   *          字段名的前缀
+   *
    * @return 指定字段的值
    */
   private Object getDiscriminatorValue(ResultSet rs, Discriminator discriminator, String columnPrefix)
@@ -1173,11 +1179,15 @@ public class DefaultResultSetHandler implements ResultSetHandler {
     final TypeHandler<?> typeHandler = resultMapping.getTypeHandler();
     return typeHandler.getResult(rs, prependPrefix(resultMapping.getColumn(), columnPrefix));
   }
+
   /**
    * 拼接指定字段的前缀
    *
-   * @param columnName 字段的名字
-   * @param prefix 前缀
+   * @param columnName
+   *          字段的名字
+   * @param prefix
+   *          前缀
+   *
    * @return prefix + columnName
    */
   private String prependPrefix(String columnName, String prefix) {

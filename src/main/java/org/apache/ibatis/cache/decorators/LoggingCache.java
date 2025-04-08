@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import org.apache.ibatis.logging.LogFactory;
 
 /**
  * 实现 Cache 接口，支持打印日志的 Cache 实现类
+ *
  * @author Clinton Begin
  */
 public class LoggingCache implements Cache {
@@ -97,6 +98,7 @@ public class LoggingCache implements Cache {
   public boolean equals(Object obj) {
     return delegate.equals(obj);
   }
+
   /**
    * @return 命中比率
    */

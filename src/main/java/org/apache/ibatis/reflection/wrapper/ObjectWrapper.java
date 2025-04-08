@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2022 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -30,15 +30,20 @@ public interface ObjectWrapper {
   /**
    * 获得值
    *
-   * @param prop PropertyTokenizer 对象，相当于键
+   * @param prop
+   *          PropertyTokenizer 对象，相当于键
+   *
    * @return 值
    */
   Object get(PropertyTokenizer prop);
+
   /**
    * 设置值
    *
-   * @param prop PropertyTokenizer 对象，相当于键
-   * @param value 值
+   * @param prop
+   *          PropertyTokenizer 对象，相当于键
+   * @param value
+   *          值
    */
   void set(PropertyTokenizer prop, Object value);
 
@@ -57,14 +62,17 @@ public interface ObjectWrapper {
   boolean hasGetter(String name);
 
   MetaObject instantiatePropertyValue(String name, PropertyTokenizer prop, ObjectFactory objectFactory);
+
   /**
    * 是否为集合
    */
   boolean isCollection();
+
   /**
    * 添加元素到集合
    */
   void add(Object element);
+
   /**
    * 添加多个元素到集合
    */

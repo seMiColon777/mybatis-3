@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -342,6 +342,7 @@ public abstract class BaseExecutor implements Executor {
 
   protected abstract <E> Cursor<E> doQueryCursor(MappedStatement ms, Object parameter, RowBounds rowBounds,
       BoundSql boundSql) throws SQLException;
+
   // 关闭 Statement 对象
   protected void closeStatement(Statement statement) {
     if (statement != null) {
@@ -354,8 +355,7 @@ public abstract class BaseExecutor implements Executor {
   }
 
   /**
-   * Apply a transaction timeout.
-   * 设置事务超时时间
+   * Apply a transaction timeout. 设置事务超时时间
    *
    * @param statement
    *          a current statement
@@ -409,6 +409,7 @@ public abstract class BaseExecutor implements Executor {
     }
     return list;
   }
+
   // 获得 Connection 对象
   protected Connection getConnection(Log statementLog) throws SQLException {
     // 获得 Connection 对象

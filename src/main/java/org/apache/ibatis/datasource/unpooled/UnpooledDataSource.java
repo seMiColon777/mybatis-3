@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2024 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -51,8 +51,7 @@ public class UnpooledDataSource implements DataSource {
   /**
    * 已注册的 Driver 映射
    * <p>
-   * KEY：Driver 类名
-   * VALUE：Driver 对象
+   * KEY：Driver 类名 VALUE：Driver 对象
    */
   private static final Map<String, Driver> registeredDrivers = new ConcurrentHashMap<>();
   /**
@@ -243,10 +242,15 @@ public class UnpooledDataSource implements DataSource {
   /**
    * 获取 Connection 连接
    *
-   * @param username 用户名
-   * @param password 密码
+   * @param username
+   *          用户名
+   * @param password
+   *          密码
+   *
    * @return Connection
-   * @throws SQLException SQLException
+   *
+   * @throws SQLException
+   *           SQLException
    */
   private Connection doGetConnection(String username, String password) throws SQLException {
     // 创建 Properties 对象

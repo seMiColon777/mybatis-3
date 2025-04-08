@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -34,8 +34,8 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.type.TypeHandlerRegistry;
 
 /**
- * 实现 StatementHandler 接口，StatementHandler 基类，提供骨架方法，
- * 从而使子类只要实现指定的几个抽象方法即可
+ * 实现 StatementHandler 接口，StatementHandler 基类，提供骨架方法， 从而使子类只要实现指定的几个抽象方法即可
+ *
  * @author Clinton Begin
  */
 public abstract class BaseStatementHandler implements StatementHandler {

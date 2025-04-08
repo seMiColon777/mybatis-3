@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -34,8 +34,7 @@ public class PropertyTokenizer implements Iterator<PropertyTokenizer> {
   /**
    * 编号。
    * <p>
-   * 对于数组 name[0] ，则 index = 0
-   * 对于 Map map[key] ，则 index = key
+   * 对于数组 name[0] ，则 index = 0 对于 Map map[key] ，则 index = key
    */
   private String index;
   /**

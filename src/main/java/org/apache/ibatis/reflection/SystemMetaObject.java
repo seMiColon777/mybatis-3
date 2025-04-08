@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -21,8 +21,7 @@ import org.apache.ibatis.reflection.wrapper.DefaultObjectWrapperFactory;
 import org.apache.ibatis.reflection.wrapper.ObjectWrapperFactory;
 
 /**
- * 系统级的 MetaObject 对象，主要提供了
- * ObjectFactory、ObjectWrapperFactory、空 MetaObject 的单例
+ * 系统级的 MetaObject 对象，主要提供了 ObjectFactory、ObjectWrapperFactory、空 MetaObject 的单例
  *
  * @author Clinton Begin
  */
@@ -47,10 +46,13 @@ public final class SystemMetaObject {
 
   private static class NullObject {
   }
+
   /**
    * 创建 MetaObject 对象
    *
-   * @param object 指定对象
+   * @param object
+   *          指定对象
+   *
    * @return MetaObject 对象
    */
   public static MetaObject forObject(Object object) {

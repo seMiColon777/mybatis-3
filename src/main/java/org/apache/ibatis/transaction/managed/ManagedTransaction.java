@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -28,8 +28,7 @@ import org.apache.ibatis.transaction.Transaction;
 /**
  * {@link Transaction} that lets the container manage the full lifecycle of the transaction. Delays connection retrieval
  * until getConnection() is called. Ignores all commit or rollback requests. By default, it closes the connection but
- * can be configured not to do it.
- * 实现 Transaction 接口，基于容器管理的事务实现类
+ * can be configured not to do it. 实现 Transaction 接口，基于容器管理的事务实现类
  *
  * @author Clinton Begin
  *
@@ -52,9 +51,7 @@ public class ManagedTransaction implements Transaction {
    */
   private Connection connection;
   /**
-   * 是否关闭连接
-   *
-   * 这个属性是和 {@link org.apache.ibatis.transaction.jdbc.JdbcTransaction} 不同的
+   * 是否关闭连接 这个属性是和 {@link org.apache.ibatis.transaction.jdbc.JdbcTransaction} 不同的
    */
   private final boolean closeConnection;
 

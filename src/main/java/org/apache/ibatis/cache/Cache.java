@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -18,8 +18,7 @@ package org.apache.ibatis.cache;
 import java.util.concurrent.locks.ReadWriteLock;
 
 /**
- * SPI for cache providers.
- * 缓存容器接口
+ * SPI for cache providers. 缓存容器接口
  * <p>
  * One instance of cache will be created for each namespace.
  * <p>
@@ -60,19 +59,18 @@ public interface Cache {
   /**
    * 获得指定键的值
    *
-   * @param key The key
+   * @param key
+   *          The key
    *
    * @return The object stored in the cache.
    */
   Object getObject(Object key);
 
   /**
-   * 移除指定键的值
-   *
-   * As of 3.3.0 this method is only called during a rollback for any previous value that was missing in the cache. This
-   * lets any blocking cache to release the lock that may have previously put on the key. A blocking cache puts a lock
-   * when a value is null and releases it when the value is back again. This way other threads will wait for the value
-   * to be available instead of hitting the database.
+   * 移除指定键的值 As of 3.3.0 this method is only called during a rollback for any previous value that was missing in the
+   * cache. This lets any blocking cache to release the lock that may have previously put on the key. A blocking cache
+   * puts a lock when a value is null and releases it when the value is back again. This way other threads will wait for
+   * the value to be available instead of hitting the database.
    *
    * @param key
    *          The key
@@ -82,23 +80,19 @@ public interface Cache {
   Object removeObject(Object key);
 
   /**
-   * 清空缓存
-   *
-   * Clears this cache instance.
+   * 清空缓存 Clears this cache instance.
    */
   void clear();
 
   /**
-   * 获得容器中缓存的数量
-   * Optional. This method is not called by the core.
+   * 获得容器中缓存的数量 Optional. This method is not called by the core.
    *
    * @return The number of elements stored in the cache (not its capacity).
    */
   int getSize();
 
   /**
-   * 获得读取写锁
-   * Optional. As of 3.2.6 this method is no longer called by the core.
+   * 获得读取写锁 Optional. As of 3.2.6 this method is no longer called by the core.
    * <p>
    * Any locking needed by the cache must be provided internally by the cache provider.
    *

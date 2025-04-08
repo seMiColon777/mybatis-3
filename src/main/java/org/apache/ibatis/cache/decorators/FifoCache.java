@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -21,8 +21,7 @@ import java.util.LinkedList;
 import org.apache.ibatis.cache.Cache;
 
 /**
- * FIFO (first in, first out) cache decorator.
- * 实现 Cache 接口，基于先进先出的淘汰机制的 Cache 实现类
+ * FIFO (first in, first out) cache decorator. 实现 Cache 接口，基于先进先出的淘汰机制的 Cache 实现类
  *
  * @author Clinton Begin
  */

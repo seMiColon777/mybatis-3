@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2022 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -25,8 +25,7 @@ import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.SystemMetaObject;
 
 /**
- * 实现 DataSourceFactory 接口，
- * 非池化的 DataSourceFactory 实现类
+ * 实现 DataSourceFactory 接口， 非池化的 DataSourceFactory 实现类
  *
  * @author Clinton Begin
  */
@@ -47,7 +46,8 @@ public class UnpooledDataSourceFactory implements DataSourceFactory {
   /**
    * 将 properties 的属性，初始化到 dataSource 中
    *
-   * @param properties 属性
+   * @param properties
+   *          属性
    */
   @Override
   public void setProperties(Properties properties) {
@@ -61,7 +61,7 @@ public class UnpooledDataSourceFactory implements DataSourceFactory {
       if (propertyName.startsWith(DRIVER_PROPERTY_PREFIX)) { // 以 "driver." 开头的配置
         String value = properties.getProperty(propertyName);
         driverProperties.setProperty(propertyName.substring(DRIVER_PROPERTY_PREFIX_LENGTH), value);
-      // 初始化到 MetaObject 中
+        // 初始化到 MetaObject 中
       } else if (metaDataSource.hasSetter(propertyName)) {
         String value = (String) properties.get(propertyName);
         Object convertedValue = convertValue(metaDataSource, propertyName, value);
@@ -88,9 +88,11 @@ public class UnpooledDataSourceFactory implements DataSourceFactory {
 
   /**
    * 将字符串转化成对应属性的类型
+   *
    * @param metaDataSource
    * @param propertyName
    * @param value
+   *
    * @return
    */
   private Object convertValue(MetaObject metaDataSource, String propertyName, String value) {

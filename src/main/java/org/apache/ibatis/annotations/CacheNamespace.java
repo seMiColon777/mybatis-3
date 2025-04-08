@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -67,32 +67,28 @@ public @interface CacheNamespace {
   Class<? extends Cache> eviction() default LruCache.class;
 
   /**
-   * Returns the flush interval.
-   * 清空缓存的频率。0 代表不清空
+   * Returns the flush interval. 清空缓存的频率。0 代表不清空
    *
    * @return the flush interval
    */
   long flushInterval() default 0;
 
   /**
-   * Return the cache size.
-   * 缓存容器大小
+   * Return the cache size. 缓存容器大小
    *
    * @return the cache size
    */
   int size() default 1024;
 
   /**
-   * Returns whether use read/write cache.
-   * 是否序列化
+   * Returns whether use read/write cache. 是否序列化
    *
    * @return {@code true} if use read/write cache; {@code false} if otherwise
    */
   boolean readWrite() default true;
 
   /**
-   * Returns whether block the cache at request time or not.
-   * 是否阻塞
+   * Returns whether block the cache at request time or not. 是否阻塞
    *
    * @return {@code true} if block the cache; {@code false} if otherwise
    */

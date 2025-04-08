@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public class MethodInvoker implements Invoker {
     // 参数大小为 1 时，一般是 setting 方法，设置 type 为方法参数[0]
     if (method.getParameterTypes().length == 1) {
       type = method.getParameterTypes()[0];
-    // 否则，一般是 getting 方法，设置 type 为返回类型
+      // 否则，一般是 getting 方法，设置 type 为返回类型
     } else {
       type = method.getReturnType();
     }
@@ -49,9 +49,13 @@ public class MethodInvoker implements Invoker {
   /**
    * 执行指定方法
    *
-   * @param target 目标
-   * @param args   参数
+   * @param target
+   *          目标
+   * @param args
+   *          参数
+   *
    * @return
+   *
    * @throws IllegalAccessException
    * @throws InvocationTargetException
    */

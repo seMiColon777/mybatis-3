@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -34,10 +34,7 @@ public class SelectKeyGenerator implements KeyGenerator {
 
   public static final String SELECT_KEY_SUFFIX = "!selectKey";
   /**
-   * 是否在 before 阶段执行
-   *
-   * true ：before
-   * after ：after
+   * 是否在 before 阶段执行 true ：before after ：after
    */
   private final boolean executeBefore;
   /**

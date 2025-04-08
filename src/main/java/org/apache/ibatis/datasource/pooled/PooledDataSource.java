@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -36,8 +36,8 @@ import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 
 /**
- * This is a simple, synchronous, thread-safe database connection pool.
- * 继承 UnpooledDataSourceFactory 类，池化的 DataSourceFactory 实现类
+ * This is a simple, synchronous, thread-safe database connection pool. 继承 UnpooledDataSourceFactory 类，池化的
+ * DataSourceFactory 实现类
  *
  * @author Clinton Begin
  */
@@ -64,9 +64,9 @@ public class PooledDataSource implements DataSource {
   // 连接池会打印状态日志并重新尝试获取一个连接（避免在误配置的情况下一直安静的失败），
   // 默认值：20000 毫秒（即 20 秒）
   protected int poolTimeToWait = 20000;
-  //  这是一个关于坏连接容忍度的底层设置， 作用于每一个尝试从缓存池获取连接的线程.
-  //  如果这个线程获取到的是一个坏的连接，那么这个数据源允许这个线程尝试重新获取一个新的连接，
-  //  但是这个重新尝试的次数不应该超过
+  // 这是一个关于坏连接容忍度的底层设置， 作用于每一个尝试从缓存池获取连接的线程.
+  // 如果这个线程获取到的是一个坏的连接，那么这个数据源允许这个线程尝试重新获取一个新的连接，
+  // 但是这个重新尝试的次数不应该超过
   protected int poolMaximumLocalBadConnectionTolerance = 3;
   // 发送到数据库的侦测查询，用来检验连接是否正常工作并准备接受请求。
   // 默认是“NO PING QUERY SET”，这会导致多数数据库驱动失败时带有一个恰当的错误消息
@@ -383,7 +383,7 @@ public class PooledDataSource implements DataSource {
         }
       }
       // 遍历 idleConnections ，进行关闭
-      //【实现代码上，和上面是一样的】
+      // 【实现代码上，和上面是一样的】
       for (int i = state.idleConnections.size(); i > 0; i--) {
         try {
           // 设置为失效
@@ -496,7 +496,7 @@ public class PooledDataSource implements DataSource {
           if (log.isDebugEnabled()) {
             log.debug("Checked out connection " + conn.getRealHashCode() + " from pool.");
           }
-        // 无空闲空闲连接
+          // 无空闲空闲连接
         } else if (state.activeConnections.size() < poolMaximumActiveConnections) {
           // Pool does not have available connection and can create a new connection
           // 激活的连接数小于 poolMaximumActiveConnections
@@ -683,8 +683,8 @@ public class PooledDataSource implements DataSource {
   }
 
   /**
-   * Unwraps a pooled connection to get to the 'real' connection
-   * 获取真实的数据库连接
+   * Unwraps a pooled connection to get to the 'real' connection 获取真实的数据库连接
+   *
    * @param conn
    *          - the pooled connection to unwrap
    *

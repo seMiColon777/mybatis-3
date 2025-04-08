@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -21,8 +21,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * The annotation that inject a property value.
- * 属性的注解
+ * The annotation that inject a property value. 属性的注解
  *
  * @since 3.4.2
  *
@@ -36,16 +35,14 @@ import java.lang.annotation.Target;
 public @interface Property {
 
   /**
-   * Returns the property name.
-   * 属性名
+   * Returns the property name. 属性名
    *
    * @return the property name
    */
   String name();
 
   /**
-   * Returns the property value or placeholder.
-   * 属性值
+   * Returns the property value or placeholder. 属性值
    *
    * @return the property value or placeholder
    */

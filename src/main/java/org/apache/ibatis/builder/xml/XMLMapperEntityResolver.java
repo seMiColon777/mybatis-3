@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -25,9 +25,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Offline entity resolver for the MyBatis DTDs.
- * 实现 EntityResolver 接口，MyBatis 自定义 EntityResolver 实现类，
- * 用于加载本地的 mybatis-3-config.dtd 和 mybatis-3-mapper.dtd 这两个 DTD 文件
+ * Offline entity resolver for the MyBatis DTDs. 实现 EntityResolver 接口，MyBatis 自定义 EntityResolver 实现类， 用于加载本地的
+ * mybatis-3-config.dtd 和 mybatis-3-mapper.dtd 这两个 DTD 文件
  *
  * @author Clinton Begin
  * @author Eduardo Macarron
@@ -87,7 +86,7 @@ public class XMLMapperEntityResolver implements EntityResolver {
         // 创建 InputSource 对象
         InputStream in = Resources.getResourceAsStream(path);
         source = new InputSource(in);
-        // 设置  publicId、systemId 属性
+        // 设置 publicId、systemId 属性
         source.setPublicId(publicId);
         source.setSystemId(systemId);
       } catch (IOException e) {

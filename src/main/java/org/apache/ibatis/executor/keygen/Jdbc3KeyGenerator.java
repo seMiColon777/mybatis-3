@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -52,8 +52,7 @@ public class Jdbc3KeyGenerator implements KeyGenerator {
   private static final String SECOND_GENERIC_PARAM_NAME = ParamNameResolver.GENERIC_NAME_PREFIX + "2";
 
   /**
-   * A shared instance.
-   * 共享的单例
+   * A shared instance. 共享的单例
    *
    * @since 3.4.3
    */

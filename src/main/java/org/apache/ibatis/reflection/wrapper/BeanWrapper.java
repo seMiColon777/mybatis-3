@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2024 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -27,8 +27,7 @@ import org.apache.ibatis.reflection.invoker.Invoker;
 import org.apache.ibatis.reflection.property.PropertyTokenizer;
 
 /**
- * 继承 BaseWrapper 抽象类，普通对象的 ObjectWrapper 实现类，
- * 例如 User、Order 这样的 POJO 类
+ * 继承 BaseWrapper 抽象类，普通对象的 ObjectWrapper 实现类， 例如 User、Order 这样的 POJO 类
  *
  * @author Clinton Begin
  */
@@ -49,19 +48,21 @@ public class BeanWrapper extends BaseWrapper {
   /**
    * 获得指定属性的值
    *
-   * @param prop PropertyTokenizer 对象，相当于键
+   * @param prop
+   *          PropertyTokenizer 对象，相当于键
+   *
    * @return
    */
   @Override
   public Object get(PropertyTokenizer prop) {
     if (prop.hasNext()) {
       return getChildValue(prop);
-    // <1> 获得集合类型的属性的指定位置的值
+      // <1> 获得集合类型的属性的指定位置的值
     } else if (prop.getIndex() != null) {
       // 获得集合类型的属性
       // 获得指定位置的值
       return getCollectionValue(prop, resolveCollection(prop, object));
-    // <2> 获得属性的值
+      // <2> 获得属性的值
     } else {
       return getBeanProperty(prop, object);
     }
@@ -70,19 +71,21 @@ public class BeanWrapper extends BaseWrapper {
   /**
    * 设置指定属性的值
    *
-   * @param prop  PropertyTokenizer 对象，相当于键
-   * @param value 值
+   * @param prop
+   *          PropertyTokenizer 对象，相当于键
+   * @param value
+   *          值
    */
   @Override
   public void set(PropertyTokenizer prop, Object value) {
     if (prop.hasNext()) {
       setChildValue(prop, value);
-    // 设置集合类型的属性的指定位置的值
+      // 设置集合类型的属性的指定位置的值
     } else if (prop.getIndex() != null) {
       // 获得集合类型的属性
       // 设置指定位置的值
       setCollectionValue(prop, resolveCollection(prop, object), value);
-    // 设置属性的值
+      // 设置属性的值
     } else {
       setBeanProperty(prop, object, value);
     }
@@ -182,6 +185,7 @@ public class BeanWrapper extends BaseWrapper {
    * @param name
    * @param prop
    * @param objectFactory
+   *
    * @return
    */
   @Override

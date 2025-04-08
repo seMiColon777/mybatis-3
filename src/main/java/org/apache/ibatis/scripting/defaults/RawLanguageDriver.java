@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ import org.apache.ibatis.session.Configuration;
 
 /**
  * As of 3.2.4 the default XML language is able to identify static statements and create a {@link RawSqlSource}. So
- * there is no need to use RAW unless you want to make sure that there is not any dynamic tag for any reason.
- * 继承 XMLLanguageDriver 类，RawSqlSource 语言驱动器实现类，确保创建的 SqlSource 是 RawSqlSource 类
+ * there is no need to use RAW unless you want to make sure that there is not any dynamic tag for any reason. 继承
+ * XMLLanguageDriver 类，RawSqlSource 语言驱动器实现类，确保创建的 SqlSource 是 RawSqlSource 类
  *
  * @since 3.2.0
  *
@@ -49,10 +49,12 @@ public class RawLanguageDriver extends XMLLanguageDriver {
     checkIsNotDynamic(source);
     return source;
   }
+
   /**
    * 校验是 RawSqlSource 对象
    *
-   * @param source 创建的 SqlSource 对象
+   * @param source
+   *          创建的 SqlSource 对象
    */
   private void checkIsNotDynamic(SqlSource source) {
     if (!RawSqlSource.class.equals(source.getClass())) {

@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -30,16 +30,21 @@ public class ParamNameUtil {
   /**
    * 获得普通方法的参数列表
    *
-   * @param method 普通方法
+   * @param method
+   *          普通方法
+   *
    * @return 参数集合
    */
   public static List<String> getParamNames(Method method) {
     return getParameterNames(method);
   }
+
   /**
    * 获得构造方法的参数列表
    *
-   * @param constructor 构造方法
+   * @param constructor
+   *          构造方法
+   *
    * @return 参数集合
    */
   public static List<String> getParamNames(Constructor<?> constructor) {

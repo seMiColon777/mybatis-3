@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -49,8 +49,11 @@ public abstract class BaseBuilder {
   /**
    * 创建正则表达式
    *
-   * @param regex 指定表达式
-   * @param defaultValue 默认表达式
+   * @param regex
+   *          指定表达式
+   * @param defaultValue
+   *          默认表达式
+   *
    * @return 正则表达式
    */
   protected Pattern parseExpression(String regex, String defaultValue) {
@@ -73,7 +76,9 @@ public abstract class BaseBuilder {
   /**
    * 解析对应的 JdbcType 类型
    *
-   * @param alias 别名
+   * @param alias
+   *          别名
+   *
    * @return 对应的 JdbcType 类型
    */
   protected JdbcType resolveJdbcType(String alias) {
@@ -86,7 +91,10 @@ public abstract class BaseBuilder {
 
   /**
    * 解析对应的 ResultSetType 类型
-   * @param alias 别名
+   *
+   * @param alias
+   *          别名
+   *
    * @return 对应的 ResultSetType 类型
    */
   protected ResultSetType resolveResultSetType(String alias) {
@@ -99,7 +107,10 @@ public abstract class BaseBuilder {
 
   /**
    * 解析对应的 ParameterMode 类型
-   * @param alias 别名
+   *
+   * @param alias
+   *          别名
+   *
    * @return 对应的 ParameterMode 类型
    */
   protected ParameterMode resolveParameterMode(String alias) {
@@ -112,7 +123,10 @@ public abstract class BaseBuilder {
 
   /**
    * 创建指定对象
-   * @param alias 别名
+   *
+   * @param alias
+   *          别名
+   *
    * @return 指定对象
    */
   protected Object createInstance(String alias) {
@@ -128,9 +142,14 @@ public abstract class BaseBuilder {
 
   /**
    * 获得对应的类型
-   * @param alias 别名
+   *
+   * @param alias
+   *          别名
+   *
    * @return 对应的类型
-   * @param <T> T
+   *
+   * @param <T>
+   *          T
    */
   protected <T> Class<? extends T> resolveClass(String alias) {
     try {
@@ -142,8 +161,12 @@ public abstract class BaseBuilder {
 
   /**
    * 从 typeHandlerRegistry 中获得或创建对应的 TypeHandler 对象
-   * @param javaType Java类型
-   * @param typeHandlerAlias 别名
+   *
+   * @param javaType
+   *          Java类型
+   * @param typeHandlerAlias
+   *          别名
+   *
    * @return TypeHandler
    */
   protected TypeHandler<?> resolveTypeHandler(Class<?> javaType, String typeHandlerAlias) {

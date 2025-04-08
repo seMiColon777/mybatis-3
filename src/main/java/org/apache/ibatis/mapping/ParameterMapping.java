@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -33,9 +33,7 @@ public class ParameterMapping {
    */
   private String property;
   /**
-   * 参数类型。
-   *
-   * 目前只需要关注 ParameterMode.IN 的情况，另外的 OUT、INOUT 是在存储过程中使用，暂时无视
+   * 参数类型。 目前只需要关注 ParameterMode.IN 的情况，另外的 OUT、INOUT 是在存储过程中使用，暂时无视
    */
   private ParameterMode mode;
   /**
@@ -51,9 +49,7 @@ public class ParameterMapping {
    */
   private Integer numericScale;
   /**
-   * TypeHandler 对象
-   *
-   * {@link Builder#resolveTypeHandler()}
+   * TypeHandler 对象 {@link Builder#resolveTypeHandler()}
    */
   private TypeHandler<?> typeHandler;
   /**
@@ -65,9 +61,7 @@ public class ParameterMapping {
    */
   private String jdbcTypeName;
   /**
-   * 表达式。
-   *
-   * ps：目前暂时不支持
+   * 表达式。 ps：目前暂时不支持
    */
   private String expression;
 

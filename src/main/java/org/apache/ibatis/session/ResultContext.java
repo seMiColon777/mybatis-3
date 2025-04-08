@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2022 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -23,14 +23,17 @@ public interface ResultContext<T> {
    * @return 当前结果对象
    */
   T getResultObject();
+
   /**
    * @return 总的结果对象的数量
    */
   int getResultCount();
+
   /**
    * @return 是否暂停
    */
   boolean isStopped();
+
   /**
    * 暂停
    */

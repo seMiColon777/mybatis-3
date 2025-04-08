@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -39,16 +39,11 @@ public class TransactionalCache implements Cache {
 
   private static final Log log = LogFactory.getLog(TransactionalCache.class);
   /**
-   * 委托的 Cache 对象。
-   *
-   * 实际上，就是二级缓存 Cache 对象。
+   * 委托的 Cache 对象。 实际上，就是二级缓存 Cache 对象。
    */
   private final Cache delegate;
   /**
-   * 提交时，清空 {@link #delegate}
-   *
-   * 初始时，该值为 false
-   * 清理后{@link #clear()} 时，该值为 true ，表示持续处于清空状态
+   * 提交时，清空 {@link #delegate} 初始时，该值为 false 清理后{@link #clear()} 时，该值为 true ，表示持续处于清空状态
    */
   private boolean clearOnCommit;
   /**

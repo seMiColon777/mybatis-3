@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -48,8 +48,7 @@ import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.type.JdbcType;
 
 /**
- * 继承 BaseBuilder 抽象类，XML 配置构建器，
- * 主要负责解析 mybatis-config.xml 配置文件
+ * 继承 BaseBuilder 抽象类，XML 配置构建器， 主要负责解析 mybatis-config.xml 配置文件
  *
  * @author Clinton Begin
  * @author Kazuki Shimizu

@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -58,8 +58,11 @@ public class PropertyParser {
   /**
    * 基于 variables 变量，替换 string 字符串中的动态属性，并返回结果
    *
-   * @param string string 字符串
-   * @param variables variables 变量
+   * @param string
+   *          string 字符串
+   * @param variables
+   *          variables 变量
+   *
    * @return 动态属性值
    */
   public static String parse(String string, Properties variables) { // <2>
@@ -72,8 +75,7 @@ public class PropertyParser {
   }
 
   /**
-   * VariableTokenHandler
-   * PropertyParser 的内部静态类，变量 Token 处理器
+   * VariableTokenHandler PropertyParser 的内部静态类，变量 Token 处理器
    */
   private static class VariableTokenHandler implements TokenHandler {
     /**

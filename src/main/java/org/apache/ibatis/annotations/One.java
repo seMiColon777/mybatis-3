@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -23,8 +23,7 @@ import java.lang.annotation.Target;
 import org.apache.ibatis.mapping.FetchType;
 
 /**
- * The annotation that specify the nested statement for retrieving single object.
- * 复杂类型的单独属性值的注解
+ * The annotation that specify the nested statement for retrieving single object. 复杂类型的单独属性值的注解
  *
  * @see Result
  * @see Results
@@ -54,16 +53,14 @@ public @interface One {
   String resultMap() default "";
 
   /**
-   * Returns the statement id that retrieves single object.
-   * 已映射语句（也就是映射器方法）的全限定名
+   * Returns the statement id that retrieves single object. 已映射语句（也就是映射器方法）的全限定名
    *
    * @return the statement id
    */
   String select() default "";
 
   /**
-   * Returns the fetch strategy for nested statement.
-   * 加载类型
+   * Returns the fetch strategy for nested statement. 加载类型
    *
    * @return the fetch strategy
    */

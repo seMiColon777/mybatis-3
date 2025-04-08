@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -47,9 +47,7 @@ import org.apache.ibatis.util.MapUtil;
 
 /**
  * This class represents a cached set of class definition information that allows for easy mapping between property
- * names and getter/setter methods.
- * 反射器，每个 Reflector 对应一个类。Reflector 会缓存反射操作需要的类的信息，
- * 例如：构造方法、属性名、setting / getting 方法等等
+ * names and getter/setter methods. 反射器，每个 Reflector 对应一个类。Reflector 会缓存反射操作需要的类的信息， 例如：构造方法、属性名、setting / getting 方法等等
  *
  * @author Clinton Begin
  */
@@ -71,29 +69,21 @@ public class Reflector {
   /**
    * 属性对应的 setting 方法的映射。
    * <p>
-   * key 为属性名称
-   * value 为 Invoker 对象
+   * key 为属性名称 value 为 Invoker 对象
    */
   private final Map<String, Invoker> setMethods = new HashMap<>();
   /**
    * 属性对应的 getting 方法的映射。
    * <p>
-   * key 为属性名称
-   * value 为 Invoker 对象
+   * key 为属性名称 value 为 Invoker 对象
    */
   private final Map<String, Invoker> getMethods = new HashMap<>();
   /**
-   * 属性对应的 setting 方法的方法参数类型的映射。{@link #setMethods}
-   *
-   * key 为属性名称
-   * value 为方法参数类型
+   * 属性对应的 setting 方法的方法参数类型的映射。{@link #setMethods} key 为属性名称 value 为方法参数类型
    */
   private final Map<String, Class<?>> setTypes = new HashMap<>();
   /**
-   * 属性对应的 getting 方法的返回值类型的映射。{@link #getMethods}
-   *
-   * key 为属性名称
-   * value 为返回值的类型
+   * 属性对应的 getting 方法的返回值类型的映射。{@link #getMethods} key 为属性名称 value 为返回值的类型
    */
   private final Map<String, Class<?>> getTypes = new HashMap<>();
   /**
@@ -187,15 +177,15 @@ public class Reflector {
           if (candidate.getName().startsWith("is")) {
             winner = candidate;
           }
-        // 不符合选择子类
+          // 不符合选择子类
         } else if (candidateType.isAssignableFrom(winnerType)) {
           // OK getter type is descendant
-        // <1.1> 符合选择子类。因为子类可以修改放大返回值。
-        // 例如，父类的一个方法的返回值为 List ，子类对该方法的返回值可以覆写为 ArrayList
+          // <1.1> 符合选择子类。因为子类可以修改放大返回值。
+          // 例如，父类的一个方法的返回值为 List ，子类对该方法的返回值可以覆写为 ArrayList
         } else if (winnerType.isAssignableFrom(candidateType)) {
           winner = candidate;
         } else {
-        // <1.2> 返回类型冲突, 将isAmbiguous设置为true
+          // <1.2> 返回类型冲突, 将isAmbiguous设置为true
           isAmbiguous = true;
           break;
         }
@@ -304,10 +294,10 @@ public class Reflector {
     // 普通类型，直接使用类
     if (src instanceof Class) {
       result = (Class<?>) src;
-    // 泛型类型，使用泛型
+      // 泛型类型，使用泛型
     } else if (src instanceof ParameterizedType) {
       result = (Class<?>) ((ParameterizedType) src).getRawType();
-    // 泛型数组，获得具体类
+      // 泛型数组，获得具体类
     } else if (src instanceof GenericArrayType) {
       Type componentType = ((GenericArrayType) src).getGenericComponentType();
       if (componentType instanceof Class) { // 普通类型

@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -28,8 +28,7 @@ import org.apache.ibatis.builder.BuilderException;
  * <p>
  * It returns database product name as a databaseId. If the user provides a properties it uses it to translate database
  * product name key="Microsoft SQL Server", value="ms" will return "ms". It can return null, if no database product name
- * or a properties was specified and no translation was found.
- * 实现 DatabaseIdProvider 接口，供应商数据库标识提供器实现类
+ * or a properties was specified and no translation was found. 实现 DatabaseIdProvider 接口，供应商数据库标识提供器实现类
  *
  * @author Eduardo Macarron
  */
@@ -61,7 +60,7 @@ public class VendorDatabaseIdProvider implements DatabaseIdProvider {
     // <1> 获得数据库产品名
     String productName = getDatabaseProductName(dataSource);
     if (this.properties != null) {
-      // 如果产品名包含 KEY ，则返回对应的  VALUE
+      // 如果产品名包含 KEY ，则返回对应的 VALUE
       return properties.entrySet().stream().filter(entry -> productName.contains((String) entry.getKey()))
           .map(entry -> (String) entry.getValue()).findFirst().orElse(null);
     }

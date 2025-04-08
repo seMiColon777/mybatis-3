@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -347,15 +347,11 @@ public class MapperMethod {
      */
     private final String mapKey;
     /**
-     * 获得 {@link ResultHandler} 在方法参数中的位置。
-     *
-     * 如果为 null ，说明不存在这个类型
+     * 获得 {@link ResultHandler} 在方法参数中的位置。 如果为 null ，说明不存在这个类型
      */
     private final Integer resultHandlerIndex;
     /**
-     * 获得 {@link RowBounds} 在方法参数中的位置。
-     *
-     * 如果为 null ，说明不存在这个类型
+     * 获得 {@link RowBounds} 在方法参数中的位置。 如果为 null ，说明不存在这个类型
      */
     private final Integer rowBoundsIndex;
     /**
@@ -394,7 +390,9 @@ public class MapperMethod {
 
     /**
      * 获得 SQL 通用参数
+     *
      * @param args
+     *
      * @return
      */
     public Object convertArgsToSqlCommandParam(Object[] args) {

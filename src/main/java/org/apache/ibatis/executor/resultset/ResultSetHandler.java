@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2022 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -29,23 +29,32 @@ public interface ResultSetHandler {
   /**
    * 处理 {@link java.sql.ResultSet} 成映射的对应的结果
    *
-   * @param stmt Statement 对象
-   * @param <E> 泛型
+   * @param stmt
+   *          Statement 对象
+   * @param <E>
+   *          泛型
+   *
    * @return 结果数组
    */
   <E> List<E> handleResultSets(Statement stmt) throws SQLException;
+
   /**
    * 处理 {@link java.sql.ResultSet} 成 Cursor 对象
    *
-   * @param stmt Statement 对象
-   * @param <E> 泛型
+   * @param stmt
+   *          Statement 对象
+   * @param <E>
+   *          泛型
+   *
    * @return Cursor 对象
    */
   <E> Cursor<E> handleCursorResultSets(Statement stmt) throws SQLException;
 
   /**
    * 存储过程相关
+   *
    * @param cs
+   *
    * @throws SQLException
    */
   void handleOutputParameters(CallableStatement cs) throws SQLException;

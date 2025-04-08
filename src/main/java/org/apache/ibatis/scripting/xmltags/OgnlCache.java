@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -41,10 +41,7 @@ public final class OgnlCache {
    */
   private static final OgnlClassResolver CLASS_RESOLVER = new OgnlClassResolver();
   /**
-   * 表达式的缓存的映射
-   *
-   * KEY：表达式
-   * VALUE：表达式的缓存 @see #parseExpression(String)
+   * 表达式的缓存的映射 KEY：表达式 VALUE：表达式的缓存 @see #parseExpression(String)
    */
   private static final Map<String, Object> expressionCache = new ConcurrentHashMap<>();
 

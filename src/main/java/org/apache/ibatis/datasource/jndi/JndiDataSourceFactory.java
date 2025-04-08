@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2022 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -44,7 +44,9 @@ public class JndiDataSourceFactory implements DataSourceFactory {
 
   /**
    * 从上下文中，获得 DataSource 对象
-   * @param properties 属性
+   *
+   * @param properties
+   *          属性
    */
   @Override
   public void setProperties(Properties properties) {
@@ -78,7 +80,9 @@ public class JndiDataSourceFactory implements DataSourceFactory {
 
   /**
    * 获得系统 Properties 对象
+   *
    * @param allProps
+   *
    * @return
    */
   private static Properties getEnvProperties(Properties allProps) {

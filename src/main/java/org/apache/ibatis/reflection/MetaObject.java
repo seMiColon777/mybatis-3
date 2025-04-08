@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2024 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -72,10 +72,12 @@ public class MetaObject {
   /**
    * 创建 MetaObject 对象
    *
-   * @param object 原始 Object 对象
+   * @param object
+   *          原始 Object 对象
    * @param objectFactory
    * @param objectWrapperFactory
    * @param reflectorFactory
+   *
    * @return MetaObject 对象
    */
   public static MetaObject forObject(Object object, ObjectFactory objectFactory,
@@ -134,6 +136,7 @@ public class MetaObject {
    * 获得指定属性的值
    *
    * @param name
+   *
    * @return
    */
   public Object getValue(String name) {
@@ -157,6 +160,7 @@ public class MetaObject {
    * 创建指定属性的 MetaObject 对象
    *
    * @param name
+   *
    * @return
    */
   public MetaObject metaObjectForProperty(String name) {

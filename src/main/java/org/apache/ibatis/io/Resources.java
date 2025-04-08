@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -37,8 +37,7 @@ public class Resources {
   private static final ClassLoaderWrapper classLoaderWrapper = new ClassLoaderWrapper();
 
   /**
-   * Charset to use when calling getResourceAsReader. null means use the system default.
-   * 字符集
+   * Charset to use when calling getResourceAsReader. null means use the system default. 字符集
    */
   private static Charset charset;
 

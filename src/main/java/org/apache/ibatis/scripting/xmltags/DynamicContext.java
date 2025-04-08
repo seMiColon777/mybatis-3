@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public class DynamicContext {
    * 唯一编号。在 {@link org.apache.ibatis.scripting.xmltags.XMLScriptBuilder.ForEachHandler} 使用
    */
   private int uniqueNumber;
+
   // 当需要使用到 OGNL 表达式时，parameterObject 非空
   public DynamicContext(Configuration configuration, Object parameterObject) {
     // <1> 初始化 bindings 参数

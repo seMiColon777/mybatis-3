@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -23,16 +23,14 @@ import javax.sql.DataSource;
 import org.apache.ibatis.session.TransactionIsolationLevel;
 
 /**
- * Creates {@link Transaction} instances.
- * Transaction 工厂接口
+ * Creates {@link Transaction} instances. Transaction 工厂接口
  *
  * @author Clinton Begin
  */
 public interface TransactionFactory {
 
   /**
-   * Sets transaction factory custom properties.
-   * 设置工厂的属性
+   * Sets transaction factory custom properties. 设置工厂的属性
    *
    * @param props
    *          the new properties
@@ -42,8 +40,7 @@ public interface TransactionFactory {
   }
 
   /**
-   * Creates a {@link Transaction} out of an existing connection.
-   * 创建 Transaction 事务
+   * Creates a {@link Transaction} out of an existing connection. 创建 Transaction 事务
    *
    * @param conn
    *          Existing database connection
@@ -55,8 +52,7 @@ public interface TransactionFactory {
   Transaction newTransaction(Connection conn);
 
   /**
-   * Creates a {@link Transaction} out of a datasource.
-   * 创建 Transaction 事务
+   * Creates a {@link Transaction} out of a datasource. 创建 Transaction 事务
    *
    * @param dataSource
    *          DataSource to take the connection from

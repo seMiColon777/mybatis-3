@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -105,10 +105,13 @@ public class ResultLoaderMap {
       load(methodName);
     }
   }
+
   /**
    * 使用 . 分隔属性，并获得首个字符串，并大写
    *
-   * @param property 属性
+   * @param property
+   *          属性
+   *
    * @return 字符串 + 大写
    */
   private static String getUppercaseFirstProperty(String property) {

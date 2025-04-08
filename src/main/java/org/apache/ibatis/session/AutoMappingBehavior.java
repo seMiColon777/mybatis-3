@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2022 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -16,28 +16,24 @@
 package org.apache.ibatis.session;
 
 /**
- * Specifies if and how MyBatis should automatically map columns to fields/properties.
- * 自动映射行为的枚举
+ * Specifies if and how MyBatis should automatically map columns to fields/properties. 自动映射行为的枚举
  *
  * @author Eduardo Macarron
  */
 public enum AutoMappingBehavior {
 
   /**
-   * Disables auto-mapping.
-   * 禁用自动映射的功能
+   * Disables auto-mapping. 禁用自动映射的功能
    */
   NONE,
 
   /**
-   * Will only auto-map results with no nested result mappings defined inside.
-   * 开启部分映射的功能
+   * Will only auto-map results with no nested result mappings defined inside. 开启部分映射的功能
    */
   PARTIAL,
 
   /**
-   * Will auto-map result mappings of any complexity (containing nested or otherwise).
-   * 开启全部映射的功能
+   * Will auto-map result mappings of any complexity (containing nested or otherwise). 开启全部映射的功能
    */
   FULL
 }

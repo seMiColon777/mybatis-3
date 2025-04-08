@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -58,10 +58,7 @@ public class ResultSetWrapper {
    */
   private final List<JdbcType> jdbcTypes = new ArrayList<>();
   /**
-   * TypeHandler 的映射
-   *
-   * KEY1：字段的名字
-   * KEY2：Java 属性类型
+   * TypeHandler 的映射 KEY1：字段的名字 KEY2：Java 属性类型
    */
   private final Map<String, Map<Class<?>, TypeHandler<?>>> typeHandlerMap = new HashMap<>();
   private final Map<String, Set<String>> mappedColumnNamesMap = new HashMap<>();
@@ -107,8 +104,8 @@ public class ResultSetWrapper {
 
   /**
    * Gets the type handler to use when reading the result set. Tries to get from the TypeHandlerRegistry by searching
-   * for the property type. If not found it gets the column JDBC type and tries to get a handler for it.
-   * 获得指定字段名的指定 JavaType 类型的 TypeHandler 对象
+   * for the property type. If not found it gets the column JDBC type and tries to get a handler for it. 获得指定字段名的指定
+   * JavaType 类型的 TypeHandler 对象
    *
    * @param propertyType
    *          the property type

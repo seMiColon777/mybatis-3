@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2024 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -177,31 +177,23 @@ public class Configuration {
   protected final TypeAliasRegistry typeAliasRegistry = new TypeAliasRegistry();
   protected final LanguageDriverRegistry languageRegistry = new LanguageDriverRegistry();
   /**
-   * MappedStatement 映射
-   *
-   * KEY：`${namespace}.${id}`
+   * MappedStatement 映射 KEY：`${namespace}.${id}`
    */
   protected final Map<String, MappedStatement> mappedStatements = new StrictMap<MappedStatement>(
       "Mapped Statements collection")
           .conflictMessageProducer((savedValue, targetValue) -> ". please check " + savedValue.getResource() + " and "
               + targetValue.getResource());
   /**
-   * Cache 对象集合
-   *
-   * KEY：命名空间 namespace
+   * Cache 对象集合 KEY：命名空间 namespace
    */
   protected final Map<String, Cache> caches = new StrictMap<>("Caches collection");
   /**
-   * ResultMap 的映射
-   *
-   * KEY：`${namespace}.${id}`
+   * ResultMap 的映射 KEY：`${namespace}.${id}`
    */
   protected final Map<String, ResultMap> resultMaps = new StrictMap<>("Result Maps collection");
   protected final Map<String, ParameterMap> parameterMaps = new StrictMap<>("Parameter Maps collection");
   /**
-   * KeyGenerator 的映射
-   *
-   * KEY：在 {@link #mappedStatements} 的 KEY 的基础上，跟上 {@link SelectKeyGenerator#SELECT_KEY_SUFFIX}
+   * KeyGenerator 的映射 KEY：在 {@link #mappedStatements} 的 KEY 的基础上，跟上 {@link SelectKeyGenerator#SELECT_KEY_SUFFIX}
    */
   protected final Map<String, KeyGenerator> keyGenerators = new StrictMap<>("Key Generators collection");
   /**
@@ -236,8 +228,7 @@ public class Configuration {
 
   /*
    * A map holds cache-ref relationship. The key is the namespace that references a cache bound to another namespace and
-   * the value is the namespace which the actual cache is bound to.
-   * Cache 指向的映射
+   * the value is the namespace which the actual cache is bound to. Cache 指向的映射
    */
   protected final Map<String, String> cacheRefMap = new HashMap<>();
 
@@ -789,11 +780,15 @@ public class Configuration {
   public Executor newExecutor(Transaction transaction) {
     return newExecutor(transaction, defaultExecutorType);
   }
+
   /**
    * 创建 Executor 对象
    *
-   * @param transaction 事务对象
-   * @param executorType 执行器类型
+   * @param transaction
+   *          事务对象
+   * @param executorType
+   *          执行器类型
+   *
    * @return Executor 对象
    */
   public Executor newExecutor(Transaction transaction, ExecutorType executorType) {
@@ -988,9 +983,7 @@ public class Configuration {
   }
 
   /**
-   * MappedStatement 映射
-   *
-   * KEY：`${namespace}.${id}`
+   * MappedStatement 映射 KEY：`${namespace}.${id}`
    */
   public MappedStatement getMappedStatement(String id, boolean validateIncompleteStatements) {
     // 校验，保证所有 MappedStatement 已经构造完毕

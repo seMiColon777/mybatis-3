@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -30,8 +30,7 @@ import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
 
 /**
- * 实现 StatementHandler 接口，路由的 StatementHandler 对象，
- * 根据 Statement 类型，转发到对应的 StatementHandler 实现类中
+ * 实现 StatementHandler 接口，路由的 StatementHandler 对象， 根据 Statement 类型，转发到对应的 StatementHandler 实现类中
  *
  * @author Clinton Begin
  */

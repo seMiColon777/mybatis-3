@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -34,17 +34,13 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.transaction.Transaction;
 
 /**
- * 继承 BaseExecutor 抽象类，可重用的 Executor 实现类
- * 每次开始读或写操作，优先从缓存中获取对应的 Statement 对象。如果不存在，才进行创建
- * 执行完成后，不关闭该 Statement 对象
+ * 继承 BaseExecutor 抽象类，可重用的 Executor 实现类 每次开始读或写操作，优先从缓存中获取对应的 Statement 对象。如果不存在，才进行创建 执行完成后，不关闭该 Statement 对象
  *
  * @author Clinton Begin
  */
 public class ReuseExecutor extends BaseExecutor {
   /**
-   * Statement 的缓存
-   *
-   * KEY ：SQL
+   * Statement 的缓存 KEY ：SQL
    */
   private final Map<String, Statement> statementMap = new HashMap<>();
 

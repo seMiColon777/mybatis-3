@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -135,19 +135,24 @@ public class TypeAliasRegistry {
       throw new TypeException("Could not resolve type alias '" + string + "'.  Cause: " + e, e);
     }
   }
+
   /**
    * 注册指定包下的别名与类的映射
    *
-   * @param packageName 指定包
+   * @param packageName
+   *          指定包
    */
   public void registerAliases(String packageName) {
     registerAliases(packageName, Object.class);
   }
+
   /**
    * 注册指定包下的别名与类的映射。另外，要求类必须是 {@param superType} 类型（包括子类）。
    *
-   * @param packageName 指定包
-   * @param superType 指定父类
+   * @param packageName
+   *          指定包
+   * @param superType
+   *          指定父类
    */
   public void registerAliases(String packageName, Class<?> superType) {
     // 获得指定包下的类门

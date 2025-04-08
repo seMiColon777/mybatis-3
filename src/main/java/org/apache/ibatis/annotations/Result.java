@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -27,8 +27,7 @@ import org.apache.ibatis.type.TypeHandler;
 import org.apache.ibatis.type.UnknownTypeHandler;
 
 /**
- * The annotation that specify a mapping definition for the property.
- * 结果字段的注解
+ * The annotation that specify a mapping definition for the property. 结果字段的注解
  *
  * @see Results
  *
@@ -40,24 +39,21 @@ import org.apache.ibatis.type.UnknownTypeHandler;
 @Repeatable(Results.class)
 public @interface Result {
   /**
-   * Returns whether id column or not.
-   * 是否是 ID 字段
+   * Returns whether id column or not. 是否是 ID 字段
    *
    * @return {@code true} if id column; {@code false} if otherwise
    */
   boolean id() default false;
 
   /**
-   * Return the column name(or column label) to map to this argument.
-   * 数据库的字段
+   * Return the column name(or column label) to map to this argument. 数据库的字段
    *
    * @return the column name(or column label)
    */
   String column() default "";
 
   /**
-   * Returns the property name for applying this mapping.
-   *  Java 类中的属性
+   * Returns the property name for applying this mapping. Java 类中的属性
    *
    * @return the property name
    */
@@ -78,8 +74,7 @@ public @interface Result {
   JdbcType jdbcType() default JdbcType.UNDEFINED;
 
   /**
-   * Returns the {@link TypeHandler} type for retrieving a column value from result set.
-   * 使用的 TypeHandler 处理器
+   * Returns the {@link TypeHandler} type for retrieving a column value from result set. 使用的 TypeHandler 处理器
    *
    * @return the {@link TypeHandler} type
    */

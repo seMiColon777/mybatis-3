@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -22,8 +22,7 @@ import javax.sql.DataSource;
 
 /**
  * Should return an id to identify the type of this database. That id can be used later on to build different queries
- * for each database type This mechanism enables supporting multiple vendors or versions
- * 数据库标识提供器接口
+ * for each database type This mechanism enables supporting multiple vendors or versions 数据库标识提供器接口
  *
  * @author Eduardo Macarron
  */
@@ -31,17 +30,23 @@ public interface DatabaseIdProvider {
   /**
    * 设置属性
    *
-   * @param p Properties 对象
+   * @param p
+   *          Properties 对象
    */
   default void setProperties(Properties p) {
     // NOP
   }
+
   /**
    * 获得数据库标识
    *
-   * @param dataSource 数据源
+   * @param dataSource
+   *          数据源
+   *
    * @return 数据库标识
-   * @throws SQLException 当 DB 发生异常时
+   *
+   * @throws SQLException
+   *           当 DB 发生异常时
    */
   String getDatabaseId(DataSource dataSource) throws SQLException;
 }

@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ import org.apache.ibatis.session.Configuration;
 public interface LanguageDriver {
 
   /**
-   * Creates a {@link ParameterHandler} that passes the actual parameters to the the JDBC statement.
-   * 创建 ParameterHandler 对象
+   * Creates a {@link ParameterHandler} that passes the actual parameters to the the JDBC statement. 创建 ParameterHandler
+   * 对象
    *
    * @author Frank D. Martinez [mnesarco]
    *
@@ -49,8 +49,7 @@ public interface LanguageDriver {
 
   /**
    * Creates an {@link SqlSource} that will hold the statement read from a mapper xml file. It is called during startup,
-   * when the mapped statement is read from a class or an xml file.
-   * 创建 SqlSource 对象，从方法注解配置，即 @Select 等
+   * when the mapped statement is read from a class or an xml file. 创建 SqlSource 对象，从方法注解配置，即 @Select 等
    *
    * @param configuration
    *          The MyBatis configuration
@@ -66,8 +65,8 @@ public interface LanguageDriver {
 
   /**
    * Creates an {@link SqlSource} that will hold the statement read from an annotation. It is called during startup,
-   * when the mapped statement is read from a class or an xml file.
-   * 创建 SqlSource 对象，从 Mapper XML 配置的 Statement 标签中，即 <select /> 等
+   * when the mapped statement is read from a class or an xml file. 创建 SqlSource 对象，从 Mapper XML 配置的 Statement 标签中，即
+   * <select /> 等
    *
    * @param configuration
    *          The MyBatis configuration

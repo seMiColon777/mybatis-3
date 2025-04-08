@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * 继承 BaseBuilder 抽象类，XML 动态语句( SQL )构建器，
- * 负责将 SQL 解析成 SqlSource 对象
+ * 继承 BaseBuilder 抽象类，XML 动态语句( SQL )构建器， 负责将 SQL 解析成 SqlSource 对象
+ *
  * @author Clinton Begin
  */
 public class XMLScriptBuilder extends BaseBuilder {
@@ -78,6 +78,7 @@ public class XMLScriptBuilder extends BaseBuilder {
 
   /**
    * 负责将 SQL 解析成 SqlSource 对象
+   *
    * @return
    */
   public SqlSource parseScriptNode() {
@@ -95,7 +96,9 @@ public class XMLScriptBuilder extends BaseBuilder {
 
   /**
    * 解析 SQL 成 MixedSqlNode 对象
+   *
    * @param node
+   *
    * @return
    */
   protected MixedSqlNode parseDynamicTags(XNode node) {
@@ -148,11 +151,14 @@ public class XMLScriptBuilder extends BaseBuilder {
     /**
      * 处理 Node
      *
-     * @param nodeToHandle 要处理的 XNode 节点
-     * @param targetContents 目标的 SqlNode 数组。实际上，被处理的 XNode 节点会创建成对应的 SqlNode 对象，添加到 targetContents 中
+     * @param nodeToHandle
+     *          要处理的 XNode 节点
+     * @param targetContents
+     *          目标的 SqlNode 数组。实际上，被处理的 XNode 节点会创建成对应的 SqlNode 对象，添加到 targetContents 中
      */
     void handleNode(XNode nodeToHandle, List<SqlNode> targetContents);
   }
+
   /**
    * 实现 NodeHandler 接口，<bind /> 标签的处理器
    */
@@ -332,6 +338,7 @@ public class XMLScriptBuilder extends BaseBuilder {
         }
       }
     }
+
     // 至多允许有一个 SqlNode 节点
     private SqlNode getDefaultSqlNode(List<SqlNode> defaultSqlNodes) {
       SqlNode defaultSqlNode = null;

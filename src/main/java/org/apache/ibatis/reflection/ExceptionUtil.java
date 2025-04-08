@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2022 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import java.lang.reflect.UndeclaredThrowableException;
 
 /**
  * 异常工具类
+ *
  * @author Clinton Begin
  */
 public class ExceptionUtil {
@@ -27,10 +28,13 @@ public class ExceptionUtil {
   private ExceptionUtil() {
     // Prevent Instantiation
   }
+
   /**
    * 去掉异常的包装
    *
-   * @param wrapped 被包装的异常
+   * @param wrapped
+   *          被包装的异常
+   *
    * @return 去除包装后的异常
    */
   public static Throwable unwrapThrowable(Throwable wrapped) {

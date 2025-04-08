@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -32,8 +32,11 @@ public class ExpressionEvaluator {
   /**
    * 判断表达式对应的值，是否为 true
    *
-   * @param expression 表达式
-   * @param parameterObject 参数对象
+   * @param expression
+   *          表达式
+   * @param parameterObject
+   *          参数对象
+   *
    * @return 是否为 true
    */
   public boolean evaluateBoolean(String expression, Object parameterObject) {
@@ -53,9 +56,14 @@ public class ExpressionEvaluator {
 
   /**
    * 获得表达式对应的集合
-   * @param expression 表达式
-   * @param parameterObject 参数对象
+   *
+   * @param expression
+   *          表达式
+   * @param parameterObject
+   *          参数对象
+   *
    * @return 迭代器对象
+   *
    * @deprecated Since 3.5.9, use the {@link #evaluateIterable(String, Object, boolean)}.
    */
   @Deprecated

@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -35,11 +35,15 @@ public class ResultExtractor {
     this.configuration = configuration;
     this.objectFactory = objectFactory;
   }
+
   /**
    * 从 list 中，提取结果
    *
-   * @param list list
-   * @param targetType 结果类型
+   * @param list
+   *          list
+   * @param targetType
+   *          结果类型
+   *
    * @return 结果
    */
   public Object extractObjectFromList(List<Object> list, Class<?> targetType) {

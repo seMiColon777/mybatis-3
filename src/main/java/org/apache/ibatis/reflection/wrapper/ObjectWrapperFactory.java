@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2022 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -26,15 +26,21 @@ public interface ObjectWrapperFactory {
   /**
    * 是否包装了指定对象
    *
-   * @param object 指定对象
+   * @param object
+   *          指定对象
+   *
    * @return 是否
    */
   boolean hasWrapperFor(Object object);
+
   /**
    * 获得指定对象的 ObjectWrapper 对象
    *
-   * @param metaObject MetaObject 对象
-   * @param object 指定对象
+   * @param metaObject
+   *          MetaObject 对象
+   * @param object
+   *          指定对象
+   *
    * @return ObjectWrapper 对象
    */
   ObjectWrapper getWrapperFor(MetaObject metaObject, Object object);

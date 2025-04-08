@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -50,8 +50,8 @@ import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.TypeHandler;
 
 /**
- * 继承 BaseBuilder 抽象类，Mapper 构造器的小助手，提供了一些公用的方法，
- * 例如创建 ParameterMap、MappedStatement 对象等等
+ * 继承 BaseBuilder 抽象类，Mapper 构造器的小助手，提供了一些公用的方法， 例如创建 ParameterMap、MappedStatement 对象等等
+ *
  * @author Clinton Begin
  */
 public class MapperBuilderAssistant extends BaseBuilder {

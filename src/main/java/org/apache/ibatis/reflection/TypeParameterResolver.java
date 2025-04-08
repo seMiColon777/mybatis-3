@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -33,8 +33,7 @@ import java.util.Arrays;
 public class TypeParameterResolver {
 
   /**
-   * Resolve field type.
-   * 解析属性类型
+   * Resolve field type. 解析属性类型
    *
    * @param field
    *          the field
@@ -54,8 +53,7 @@ public class TypeParameterResolver {
   }
 
   /**
-   * Resolve return type.
-   * 解析方法返回类型
+   * Resolve return type. 解析方法返回类型
    *
    * @param method
    *          the method
@@ -75,8 +73,7 @@ public class TypeParameterResolver {
   }
 
   /**
-   * Resolve param types.
-   * 解析方法参数的类型数组
+   * Resolve param types. 解析方法参数的类型数组
    *
    * @param method
    *          the method
@@ -103,9 +100,13 @@ public class TypeParameterResolver {
   /**
    * 解析类型
    *
-   * @param type 类型
-   * @param srcType 来源类型
-   * @param declaringClass 定义的类
+   * @param type
+   *          类型
+   * @param srcType
+   *          来源类型
+   * @param declaringClass
+   *          定义的类
+   *
    * @return 解析后的类型
    */
   private static Type resolveType(Type type, Type srcType, Class<?> declaringClass) {
@@ -120,7 +121,6 @@ public class TypeParameterResolver {
       return type;
     }
   }
-
 
   private static Type resolveGenericArrayType(GenericArrayType genericArrayType, Type srcType,
       Class<?> declaringClass) {
@@ -144,9 +144,13 @@ public class TypeParameterResolver {
   /**
    * 解析 ParameterizedType 类型
    *
-   * @param parameterizedType ParameterizedType 类型
-   * @param srcType 来源类型
-   * @param declaringClass 定义的类
+   * @param parameterizedType
+   *          ParameterizedType 类型
+   * @param srcType
+   *          来源类型
+   * @param declaringClass
+   *          定义的类
+   *
    * @return 解析后的类型
    */
   private static ParameterizedType resolveParameterizedType(ParameterizedType parameterizedType, Type srcType,
@@ -334,11 +338,11 @@ public class TypeParameterResolver {
           + Arrays.toString(actualTypeArguments) + "]";
     }
   }
+
   /**
    * WildcardType 实现类
    * <p>
-   * 泛型表达式（或者通配符表达式），即 ? extend Number、? super Integer 这样的表达式。
-   * WildcardType 虽然是 Type 的子接口，但却不是 Java 类型中的一种。
+   * 泛型表达式（或者通配符表达式），即 ? extend Number、? super Integer 这样的表达式。 WildcardType 虽然是 Type 的子接口，但却不是 Java 类型中的一种。
    */
   static class WildcardTypeImpl implements WildcardType {
     /**
@@ -365,6 +369,7 @@ public class TypeParameterResolver {
       return upperBounds;
     }
   }
+
   /**
    * GenericArrayType 实现类
    * <p>

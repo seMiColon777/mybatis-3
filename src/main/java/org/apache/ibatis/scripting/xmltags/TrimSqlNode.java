@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -81,7 +81,9 @@ public class TrimSqlNode implements SqlNode {
 
   /**
    * 用 | 分隔字符串成字符串数组，并都转换成大写
+   *
    * @param overrides
+   *
    * @return
    */
   private static List<String> parseOverrides(String overrides) {

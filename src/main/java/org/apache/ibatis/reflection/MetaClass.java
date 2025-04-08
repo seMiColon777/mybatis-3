@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -27,8 +27,7 @@ import org.apache.ibatis.reflection.invoker.MethodInvoker;
 import org.apache.ibatis.reflection.property.PropertyTokenizer;
 
 /**
- * 类的元数据，基于 Reflector 和 PropertyTokenizer，
- * 提供对指定类的各种骚操作
+ * 类的元数据，基于 Reflector 和 PropertyTokenizer， 提供对指定类的各种骚操作
  *
  * @author Clinton Begin
  */
@@ -47,6 +46,7 @@ public class MetaClass {
    *
    * @param type
    * @param reflectorFactory
+   *
    * @return
    */
   public static MetaClass forClass(Class<?> type, ReflectorFactory reflectorFactory) {
@@ -57,6 +57,7 @@ public class MetaClass {
    * 创建类的指定属性的类的 MetaClass 对象
    *
    * @param name
+   *
    * @return
    */
   public MetaClass metaClassForProperty(String name) {
@@ -77,6 +78,7 @@ public class MetaClass {
    *
    * @param name
    * @param useCamelCaseMapping
+   *
    * @return
    */
   public String findProperty(String name, boolean useCamelCaseMapping) {
@@ -227,7 +229,7 @@ public class MetaClass {
         // 递归解析子表达式 children ，并将结果添加到 builder 中
         metaProp.buildProperty(prop.getChildren(), builder);
       }
-    // 无子表达式
+      // 无子表达式
     } else {
       // <4> 获得属性名，并添加到 builder 中
       String propertyName = reflector.findPropertyName(name);

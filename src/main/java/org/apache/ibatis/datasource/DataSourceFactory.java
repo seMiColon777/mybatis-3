@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2022 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -28,9 +28,11 @@ public interface DataSourceFactory {
   /**
    * 设置 DataSource 对象的属性
    *
-   * @param props 属性
+   * @param props
+   *          属性
    */
   void setProperties(Properties props);
+
   /**
    * 获得 DataSource 对象
    *

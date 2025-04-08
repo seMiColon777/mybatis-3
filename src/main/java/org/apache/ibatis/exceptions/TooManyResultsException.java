@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -16,8 +16,7 @@
 package org.apache.ibatis.exceptions;
 
 /**
- * 继承 PersistenceException 类，查询返回过多结果的异常。
- * 期望返回一条，实际返回了多条
+ * 继承 PersistenceException 类，查询返回过多结果的异常。 期望返回一条，实际返回了多条
  *
  * @author Clinton Begin
  */

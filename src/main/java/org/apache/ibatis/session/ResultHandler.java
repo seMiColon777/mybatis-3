@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2022 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ public interface ResultHandler<T> {
   /**
    * 处理当前结果
    *
-   * @param resultContext ResultContext 对象。在其中，可以获得当前结果
+   * @param resultContext
+   *          ResultContext 对象。在其中，可以获得当前结果
    */
   void handleResult(ResultContext<? extends T> resultContext);
 

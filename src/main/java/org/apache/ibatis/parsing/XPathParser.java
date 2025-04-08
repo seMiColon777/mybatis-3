@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -131,10 +131,14 @@ public class XPathParser {
   /**
    * 构造 XPathParser 对象
    *
-   * @param xml XML 字符串
-   * @param validation 是否校验 XML
-   * @param variables 变量 Properties 对象
-   * @param entityResolver XML 实体解析器
+   * @param xml
+   *          XML 字符串
+   * @param validation
+   *          是否校验 XML
+   * @param variables
+   *          变量 Properties 对象
+   * @param entityResolver
+   *          XML 实体解析器
    */
   public XPathParser(String xml, boolean validation, Properties variables, EntityResolver entityResolver) {
     commonConstructor(validation, variables, entityResolver);
@@ -167,8 +171,11 @@ public class XPathParser {
   /**
    * eval 元素的方法，用于获得 String 类型的元素的值
    *
-   * @param root 指定节点
-   * @param expression 表达式
+   * @param root
+   *          指定节点
+   * @param expression
+   *          表达式
+   *
    * @return 值
    */
   public String evalString(Object root, String expression) {
@@ -259,9 +266,13 @@ public class XPathParser {
   /**
    * 获得指定元素或节点的值
    *
-   * @param expression 表达式
-   * @param root 指定节点
-   * @param returnType 返回类型
+   * @param expression
+   *          表达式
+   * @param root
+   *          指定节点
+   * @param returnType
+   *          返回类型
+   *
    * @return 值
    */
   private Object evaluate(String expression, Object root, QName returnType) {
@@ -275,7 +286,9 @@ public class XPathParser {
   /**
    * 将 XML 文件解析成 Document 对象
    *
-   * @param inputSource XML 的 InputSource 对象
+   * @param inputSource
+   *          XML 的 InputSource 对象
+   *
    * @return Document 对象
    */
   private Document createDocument(InputSource inputSource) {
@@ -323,9 +336,12 @@ public class XPathParser {
   /**
    * 公用的构造方法
    *
-   * @param validation 是否校验 XML
-   * @param variables 变量 Properties 对象
-   * @param entityResolver XML 实体解析器
+   * @param validation
+   *          是否校验 XML
+   * @param variables
+   *          变量 Properties 对象
+   * @param entityResolver
+   *          XML 实体解析器
    */
   private void commonConstructor(boolean validation, Properties variables, EntityResolver entityResolver) {
     this.validation = validation;

@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -28,8 +28,7 @@ import org.apache.ibatis.session.Configuration;
  * placeholders "?" and a list (ordered) of a parameter mappings with the additional information for each parameter (at
  * least the property name of the input object to read the value from).
  * <p>
- * Can also have additional parameters that are created by the dynamic language (for loops, bind...).
- * 一次可执行的 SQL 封装
+ * Can also have additional parameters that are created by the dynamic language (for loops, bind...). 一次可执行的 SQL 封装
  *
  * @author Clinton Begin
  */

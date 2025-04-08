@@ -1,5 +1,5 @@
 /*
- *    Copyright 2009-2023 the original author or authors.
+ *    Copyright 2009-2025 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ import org.apache.ibatis.transaction.TransactionException;
 /**
  * {@link Transaction} that makes use of the JDBC commit and rollback facilities directly. It relies on the connection
  * retrieved from the dataSource to manage the scope of the transaction. Delays connection retrieval until
- * getConnection() is called. Ignores commit or rollback requests when autocommit is on.
- * 实现 Transaction 接口，基于 JDBC 的事务实现类
+ * getConnection() is called. Ignores commit or rollback requests when autocommit is on. 实现 Transaction 接口，基于 JDBC
+ * 的事务实现类
  *
  * @author Clinton Begin
  *
@@ -116,10 +116,12 @@ public class JdbcTransaction implements Transaction {
       connection.close();
     }
   }
+
   /**
    * 设置指定的 autoCommit 属性
    *
-   * @param desiredAutoCommit 指定的 autoCommit 属性
+   * @param desiredAutoCommit
+   *          指定的 autoCommit 属性
    */
   protected void setDesiredAutoCommit(boolean desiredAutoCommit) {
     try {
@@ -138,6 +140,7 @@ public class JdbcTransaction implements Transaction {
           e);
     }
   }
+
   /**
    * 重置 autoCommit 属性
    */
@@ -160,10 +163,12 @@ public class JdbcTransaction implements Transaction {
       }
     }
   }
+
   /**
    * 获得 Connection 对象
    *
-   * @throws SQLException 获得失败
+   * @throws SQLException
+   *           获得失败
    */
   protected void openConnection() throws SQLException {
     if (log.isDebugEnabled()) {
