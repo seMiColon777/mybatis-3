@@ -26,6 +26,8 @@ import org.apache.ibatis.executor.resultset.ResultSetHandler;
 import org.apache.ibatis.executor.statement.StatementHandler;
 
 /**
+ * 方法调用信息
+ *
  * @author Clinton Begin
  */
 public class Invocation {
